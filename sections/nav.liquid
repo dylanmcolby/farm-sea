@@ -53,9 +53,13 @@
   @media (max-width: 1200px) {
     
     #shopify-section-{{ section.id }} .section-padding {
-        padding-top: calc({{ section.settings.padding_top }}rem * 0.75);
-        padding-bottom: calc({{ section.settings.padding_bottom }}rem * 0.75);
+        padding-top: calc({{ section.settings.padding_top }}rem * 1);
+        padding-bottom: calc({{ section.settings.padding_bottom }}rem * 1);
     }
+    #shopify-section-{{ section.id }}.scrolled .section-padding  {
+      padding-top: calc({{ section.settings.padding_top }}rem);
+      padding-bottom: calc({{ section.settings.padding_bottom }}rem);
+  }
     #shopify-section-{{ section.id }} .nav_logo {
     height: calc({{ section.settings.logo_height }}px * 0.75);
     position: absolute;
