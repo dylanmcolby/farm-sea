@@ -139,15 +139,9 @@
     object-fit: contain;
   }
 
-  {% if section.index == 1 %}
-    #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
-     font-size: 0.85rem;
-    }
-  {% else %}
-    #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
-      font-size: calc(1rem * var(--scale-factor));
-     }
-    {% endif %}
+  #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
+    font-size: calc(1rem * var(--scale-factor));
+   }
 
   #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-icon {
     width: calc(20px * var(--scale-factor));
@@ -202,7 +196,6 @@
       "type": "range",
       "id": "scale",
       "label": "Scale",
-      "info": "Has no effect if announcement is in header",
       "min": 0.2,
       "max": 4,
       "step": 0.2,
