@@ -99,7 +99,7 @@
                      height="{{ section.settings.logo.height }}">
               </noscript>
             {% else %}
-              {{ shop.name }}
+              {{ shop.name }} 
             {% endif %}
           </a>
           {% if request.page_type == 'index' %}
@@ -529,7 +529,7 @@
 
   .nav_dropdown .nav_dropdown-list {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 1px);
     left: 0;
     width: 100vw;
     padding: 0rem 1rem;
