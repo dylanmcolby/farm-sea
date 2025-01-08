@@ -1,5 +1,5 @@
 <!-- sections/ticker.liquid -->
-<div class="ticker color-{{ section.settings.color_scheme }} relative" style="overflow:hidden;width:100%;">
+<div class="ticker relative" style="overflow:hidden;width:100%;">
   {% if section.settings.link %}
     <a href="{{ section.settings.link }}" style="display: contents;">
   {% endif %}
@@ -122,7 +122,7 @@
     line-height:var(--ticker-height);
     margin-left: calc(var(--scale-factor) * {{ section.settings.text_spacing }}px);
     margin-right:calc(var(--scale-factor) * {{ section.settings.text_spacing }}px);
-    color: var(--color-heading-text);
+    color: var(--color-text);
   }
   #shopify-section-{{ section.id }} .ticker-text * {
       text-decoration:none;
@@ -236,11 +236,6 @@
       "max": 100,
       "step": 5,
       "default": 75
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color Scheme"
     }
   ],
   "blocks": [
