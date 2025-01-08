@@ -139,9 +139,11 @@
     object-fit: contain;
   }
 
-  #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
-    font-size: calc(1rem * var(--scale-factor));
-  }
+  {% unless section.index == 1 %}
+    #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
+     font-size: calc(1rem * var(--scale-factor));
+    }
+{% endunless %}
 
   #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-icon {
     width: calc(20px * var(--scale-factor));
