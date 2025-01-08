@@ -38,9 +38,11 @@
       padding-top: calc({{ section.settings.padding_top }}rem / 4);
       padding-bottom: calc({{ section.settings.padding_bottom }}rem / 4);
   }
-
+  #shopify-section-{{ section.id }} .nav_logo {
+    height: {{ section.settings.logo_height }}px;
+  }
   #shopify-section-{{ section.id }}.scrolled .nav_logo {
-    height: 2rem;
+    height: calc({{ section.settings.logo_height }}px / 2);
     animation: none;
   }
 
@@ -286,6 +288,16 @@
       "info": "Paste your SVG code here. This will override the logo image if provided."
     },
     {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Logo Height",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
       "type": "checkbox",
       "id": "transparent_header",
       "label": "Transparent Header",
@@ -519,6 +531,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  .nav_logo svg {
+    height:100%;
+    width:auto;
   }
 
   .nav_hamburger {
