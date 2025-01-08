@@ -5144,7 +5144,7 @@ hr {
   display: none;
 }
 
-@media only screen and (max-width: 749px) {
+@media only screen and (max-width: 1400px) {
   .site-header__icon {
     display: inline-block;
     vertical-align: middle;
@@ -5153,7 +5153,7 @@ hr {
   }
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 1401px) {
   .site-header__icon .icon-search {
     margin-right: 3px;
   }
