@@ -66,7 +66,7 @@
       <div class="section-padding">
         <nav class="nav" aria-label="Main Menu">
           <button class="nav_hamburger nav_icon-link" aria-label="Open menu">
-            <div class="icon-1x1-medium">{% render 'icon-hamburger' %}</div>
+            <div class="nav_icon">{% render 'icon-hamburger' %}</div>
           </button>
 
           <a href="/" class="nav_logo" aria-label="Back to homepage">
@@ -125,13 +125,13 @@
 
           <div class="nav_right">
             <a href="{{ routes.search_url }}" class="nav_icon-link" aria-label="Search">
-              <div class="icon-1x1-medium">{% render 'icon-search' %}</div>
+              <div class="nav_icon">{% render 'icon-search' %}</div>
             </a>
             <a href="{{ routes.account_url }}" class="nav_icon-link" aria-label="Account">
-              <div class="icon-1x1-medium">{% render 'icon-account' %}</div>
+              <div class="nav_icon">{% render 'icon-account' %}</div>
             </a>
             <a href="{{ routes.cart_url }}" class="nav_icon-link js-open-cart" aria-label="Cart">
-              <div class="icon-1x1-medium">{% render 'icon-cart' %}</div>
+              <div class="nav_icon">{% render 'icon-cart' %}</div>
               <span class="nav_icon-overlay-text js-cart-count critical-hidden" data-cart-count>
                 {%- if cart.item_count > 0 -%}{{ cart.item_count }}{%- endif -%}
               </span>
@@ -392,6 +392,11 @@
 
   .nav_icon-link:hover {
     background-color: var(--color-bg-alt);
+  }
+
+  .nav_icon {
+    width:1rem;
+    height:1rem;
   }
 
   .nav_icon-overlay-text {
