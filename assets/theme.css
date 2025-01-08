@@ -678,9 +678,15 @@ textarea {
 .small-desktop--show {
   display:none;
 }
+.small-desktop-up--hide {
+  display:none;
+}
 @media only screen and (max-width: 1400px) {
   .small-desktop--hide {
     display:none;
+  }
+  .small-desktop-up--hide {
+    display:block;
   }
   .small-desktop--show {
     display:block;
