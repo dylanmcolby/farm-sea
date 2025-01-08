@@ -139,11 +139,15 @@
     object-fit: contain;
   }
 
-  {% unless section.index == 1 %}
+  {% if section.index == 1 %}
     #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
-     font-size: calc(1rem * var(--scale-factor));
+     font-size: 0.85rem;
     }
-{% endunless %}
+  {% else %}
+    #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
+      font-size: calc(1rem * var(--scale-factor));
+     }
+    {% endif %}
 
   #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-icon {
     width: calc(20px * var(--scale-factor));
