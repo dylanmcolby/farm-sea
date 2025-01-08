@@ -57,7 +57,7 @@
 
 <header
   id="header"
-  class="color-{{ section.settings.color_scheme }}{% if section.settings.transparent_header %} transparent{% endif %} relative"
+  class="{% if section.settings.transparent_header %} transparent{% endif %} relative"
 >
   <div class="padding-global">
     <div class="{{ section.settings.container_size }}">
@@ -275,9 +275,15 @@
       "label": "Main Menu"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color Scheme"
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "html",
+      "id": "logo_svg",
+      "label": "Logo SVG",
+      "info": "Paste your SVG code here. This will override the logo image if provided."
     },
     {
       "type": "checkbox",
