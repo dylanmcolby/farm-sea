@@ -23,7 +23,7 @@
                 height="64"
               >
             {% endif %}
-            <div class="ticker-text text-size-small{% if section.settings.use_heading_font %} heading-font{% endif %}">
+            <div class="ticker-text>
               {% if section.settings.link %}
                 {{ block.settings.text | replace: '<a href=', '<span' | replace: '</a>', '</span>' | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
               {% else %}
@@ -46,7 +46,7 @@
                 height="64"
               >
             {% endif %}
-            <div class="ticker-text text-size-small{% if section.settings.use_heading_font %} heading-font{% endif %}">
+            <div class="ticker-text">
               {% if section.settings.link %}
                 {{ block.settings.text | replace: '<a href=', '<span' | replace: '</a>', '</span>' | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
               {% else %}
@@ -59,7 +59,7 @@
     {% else %}
       <div class="ticker-content">
         {% for block in section.blocks %}
-          <div class="ticker-text text-size-small{% if section.settings.use_heading_font %} heading-font{% endif %}">
+          <div class="ticker-text">
             {% if section.settings.link %}
               {{ block.settings.text | replace: '<a href=', '<span' | replace: '</a>', '</span>' | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
             {% else %}
@@ -95,6 +95,8 @@
 
   #shopify-section-{{ section.id }} {
     height: var(--ticker-height);
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
   }
 
   #shopify-section-{{ section.id }} .ticker {
@@ -122,7 +124,6 @@
     line-height:var(--ticker-height);
     margin-left: calc(var(--scale-factor) * {{ section.settings.text_spacing }}px);
     margin-right:calc(var(--scale-factor) * {{ section.settings.text_spacing }}px);
-    color: var(--color-text);
   }
   #shopify-section-{{ section.id }} .ticker-text * {
       text-decoration:none;
@@ -202,12 +203,6 @@
       "default": 1
     },
     {
-      "type": "checkbox",
-      "id": "use_heading_font",
-      "label": "Use heading font",
-      "default": false
-    },
-    {
       "type": "range",
       "id": "text_spacing",
       "label": "Text Spacing",
@@ -236,7 +231,19 @@
       "max": 100,
       "step": 5,
       "default": 75
-    }
+    },
+  {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Background Color",
+    "default": "#000000"
+  },
+  {
+    "type": "color", 
+    "id": "text_color",
+    "label": "Text Color",
+    "default": "#ffffff"
+  }
   ],
   "blocks": [
     {
