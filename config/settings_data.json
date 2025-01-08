@@ -518,11 +518,11 @@
           "text_BrPwPk"
         ],
         "settings": {
-          "repeat_text": true,
+          "repeat_text": false,
           "scale": 1,
           "text_spacing": 40,
           "link": "",
-          "scroll_effect": true,
+          "scroll_effect": false,
           "scroll_speed": 75,
           "bg_color": "#282828",
           "text_color": "#ffffff"
