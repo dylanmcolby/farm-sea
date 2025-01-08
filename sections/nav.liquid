@@ -430,7 +430,7 @@
     justify-content: space-between;
     align-items: center;
     /* margin-left: calc(-1 * var(--nav-padding)); */
-    margin-right: calc(-1 * var(--nav-padding) / 1.5);
+    margin-right: calc(-1 * var(--nav-padding) / 2);
     transition: all 100ms ease;
     z-index: 10;
   }
@@ -623,7 +623,7 @@
 
   @media (max-width: 1200px) {
     .nav {
-      margin-left: calc(-1 * var(--nav-padding));
+      margin-left: calc(-1 * var(--nav-padding) / 2);
       gap:0.5rem;
     }
     .nav_dropdown[open] > summary.nav_dropdown-trigger svg {
