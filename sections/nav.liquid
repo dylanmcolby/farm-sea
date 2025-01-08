@@ -12,6 +12,9 @@
       z-index: 10;
       transition: all 100ms ease;
   }
+  #shopify-section-{{ section.id }} :not(.transparent) {
+    background-color: var(--color-bg);
+  }
   #shopify-section-{{ section.id }} .transparent {
       background-color: var(--color-bg)00;
       transition: background-color 150ms ease-in;
