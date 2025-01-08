@@ -294,6 +294,36 @@
   }
 
   new Navigation();
+
+  const detailsElements = Array.from(document.querySelectorAll('details'));
+  let outsideClickListener;
+
+  detailsElements.forEach((details) => {
+    details.addEventListener('toggle', function () {
+      if (this.open) {
+        const otherDetails = detailsElements.filter((detail) => {
+          // Check if this details element is not a parent of the current one
+          return detail !== this && !detail.contains(this);
+        });
+        otherDetails.forEach((detail) => (detail.open = false));
+
+        outsideClickListener = (event) => {
+          if (!this.contains(event.target)) {
+            this.open = false;
+            removeClickListener();
+          }
+        };
+
+        document.addEventListener('click', outsideClickListener);
+      } else {
+        removeClickListener();
+      }
+    });
+  });
+
+  const removeClickListener = () => {
+    document.removeEventListener('click', outsideClickListener);
+  };
 </script>
 
 {% schema %}
