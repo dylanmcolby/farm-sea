@@ -119,6 +119,13 @@
       {% endif %}
 
       <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third medium-up--push-one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
+        {% if linklists[section.settings.secondary_linklist] != blank %}
+          <nav class="grid__item medium-up--one-quarter small--hide text-right" 
+               id="AccessibleNavSecondary" 
+               role="navigation">
+            {% include 'site-nav', linklist: section.settings.secondary_linklist %}
+          </nav>
+        {% endif %}
         <div class="site-header__icons-wrapper">
 
           <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
@@ -481,7 +488,7 @@
         "cs": "Nabídka",
         "da": "Menu",
         "de": "Menü",
-        "en": "Menu",
+        "en": "Left Side Menu",
         "es": "Menú",
         "fi": "Valikko",
         "fr": "Menu",
@@ -501,6 +508,12 @@
         "zh-TW": "選單"
       },
       "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "secondary_linklist",
+      "label": "Right-side menu",
+      "default": ""
     },
     {
       "type": "header",
