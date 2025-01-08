@@ -519,7 +519,7 @@
         ],
         "settings": {
           "repeat_text": false,
-          "scale": 2.8,
+          "scale": 0.8,
           "text_spacing": 40,
           "link": "",
           "scroll_effect": false,
