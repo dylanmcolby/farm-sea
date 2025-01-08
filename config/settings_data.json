@@ -503,6 +503,30 @@
           "button_label": "Shop Our Year Round Favorites",
           "button_link": "shopify://products/the-farm-sea-classic-candle"
         }
+      },
+      "ticker": {
+        "type": "ticker",
+        "blocks": {
+          "text_BrPwPk": {
+            "type": "text",
+            "settings": {
+              "text": "FREE SHIPPING ON U.S. ORDERS $100+"
+            }
+          }
+        },
+        "block_order": [
+          "text_BrPwPk"
+        ],
+        "settings": {
+          "repeat_text": true,
+          "scale": 1,
+          "text_spacing": 40,
+          "link": "",
+          "scroll_effect": true,
+          "scroll_speed": 75,
+          "bg_color": "#282828",
+          "text_color": "#ffffff"
+        }
       }
     },
     "content_for_index": [
