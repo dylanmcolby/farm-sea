@@ -23,7 +23,7 @@
                 height="64"
               >
             {% endif %}
-            <div class="ticker-text>
+            <div class="ticker-text">
               {% if section.settings.link %}
                 {{ block.settings.text | replace: '<a href=', '<span' | replace: '</a>', '</span>' | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
               {% else %}
