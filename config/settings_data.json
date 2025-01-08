@@ -457,7 +457,7 @@
   "presets": {
     "Default": {
       "sections": {
-        "header": { "type": "nav", "settings": {} },
+        "header": { "type": "header", "settings": {} },
         "hero-1": {
           "type": "hero",
           "settings": { "hero_size": "large", "text_size": "large" }
