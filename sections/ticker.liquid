@@ -1,0 +1,265 @@
+<!-- sections/ticker.liquid -->
+<div class="ticker color-{{ section.settings.color_scheme }} relative" style="overflow:hidden;width:100%;">
+  {% if section.settings.link %}
+    <a href="{{ section.settings.link }}" style="display: contents;">
+  {% endif %}
+  <div
+    class="ticker{% if section.settings.scroll_effect %} ticker-scroll{% endif %}"
+    {% if section.settings.scroll_effect %}
+      data-scroll-speed="{{ section.settings.scroll_speed }}"
+    {% endif %}
+  >
+    {% if section.settings.repeat_text %}
+      <div class="ticker-content">
+        {% for i in (1..6) %}
+          {% for block in section.blocks %}
+            {% if section.settings.divider_icon %}
+              <img
+                class="ticker-icon"
+                src="{{ section.settings.divider_icon | img_url: '64x64' }}"
+                alt="{{ section.settings.divider_icon .alt }}"
+                role="presentation"
+                width="64"
+                height="64"
+              >
+            {% endif %}
+            <div class="ticker-text text-size-small{% if section.settings.use_heading_font %} heading-font{% endif %}">
+              {% if section.settings.link %}
+                {{ block.settings.text | replace: '<a href=', '<span' | replace: '</a>', '</span>' | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
+              {% else %}
+                {{ block.settings.text | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="ticker-content">
+        {% for i in (1..6) %}
+          {% for block in section.blocks %}
+            {% if section.settings.divider_icon %}
+              <img
+                class="ticker-icon"
+                src="{{ section.settings.divider_icon | img_url: '64x64' }}"
+                alt="{{ section.settings.divider_icon .alt }}"
+                role="presentation"
+                width="64"
+                height="64"
+              >
+            {% endif %}
+            <div class="ticker-text text-size-small{% if section.settings.use_heading_font %} heading-font{% endif %}">
+              {% if section.settings.link %}
+                {{ block.settings.text | replace: '<a href=', '<span' | replace: '</a>', '</span>' | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
+              {% else %}
+                {{ block.settings.text | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="ticker-content">
+        {% for block in section.blocks %}
+          <div class="ticker-text text-size-small{% if section.settings.use_heading_font %} heading-font{% endif %}">
+            {% if section.settings.link %}
+              {{ block.settings.text | replace: '<a href=', '<span' | replace: '</a>', '</span>' | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
+            {% else %}
+              {{ block.settings.text | replace: '[BREAK]', '</span>' | replace: '[', '<span style="color:' | replace: ']', '">' }}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  {% if section.settings.link %}
+    </a>
+  {% endif %}
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) {
+    --scale-factor: 1;
+  }
+  #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) {
+    --scale-factor: {{ section.settings.scale }};
+  }
+  {% if section.index == 1 %}
+    :root {
+      --ticker-height: 40px;
+      --ticker-height-section: 40px;
+    }
+  {% else %}
+    #shopify-section-{{ section.id }} {
+      --ticker-height: calc(40px * var(--scale-factor));
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} {
+    height: var(--ticker-height);
+  }
+
+  #shopify-section-{{ section.id }} .ticker {
+    white-space: nowrap;
+    height: var(--ticker-height);
+    overflow: hidden;
+    display: inline-block;
+    flex-wrap: nowrap;
+    width:auto;
+    {% unless section.settings.repeat_text %}
+      text-align:center;
+      width:100%;
+    {% endunless %}
+  }
+  #shopify-section-{{ section.id }} .ticker-content {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width:fit-content;
+  }
+  #shopify-section-{{ section.id }} .ticker-text {
+    display:inline-block;
+    line-height:var(--ticker-height);
+    margin-left: calc(var(--scale-factor) * {{ section.settings.text_spacing }}px);
+    margin-right:calc(var(--scale-factor) * {{ section.settings.text_spacing }}px);
+    color: var(--color-heading-text);
+  }
+  #shopify-section-{{ section.id }} .ticker-text * {
+      text-decoration:none;
+      color:inherit;
+      line-height:var(--ticker-height);
+      display:inline-block;
+      height:100%;
+    }
+    #shopify-section-{{ section.id }} .ticker-icon {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-text {
+    font-size: calc(1rem * var(--scale-factor));
+  }
+
+  #shopify-section-{{ section.id }}:not(.shopify-section-group-header-group) .ticker-icon {
+    width: calc(20px * var(--scale-factor));
+    height: calc(20px * var(--scale-factor));
+  }
+</style>
+{% if section.settings.scroll_effect %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentSection = document.getElementById('shopify-section-{{ section.id }}');
+      const tickerContents = currentSection.querySelectorAll('.ticker-content');
+      const scrollSpeed = {{ section.settings.scroll_speed | json }};
+
+      function startTickerAnimation(tickerContent) {
+        const tickerWidth = tickerContent.offsetWidth;
+        const animationDuration = scrollSpeed * 1000; // Convert speed to milliseconds
+
+        const keyframes = [
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-100%)' }
+        ];
+
+        const animationOptions = {
+          duration: animationDuration,
+          iterations: Infinity
+        };
+
+        tickerContent.animate(keyframes, animationOptions);
+      }
+
+      tickerContents.forEach(startTickerAnimation);
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "divider_icon",
+      "label": "Divider Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "repeat_text",
+      "label": "Repeat text",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "scale",
+      "label": "Scale",
+      "info": "This feature has no effect if the ticker is in the header group",
+      "min": 1,
+      "max": 4,
+      "step": 0.2,
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "use_heading_font",
+      "label": "Use heading font",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "label": "Text Spacing",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Section Link",
+      "info": "Optional: Adds a link to the entire section"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_effect",
+      "label": "Turn on scroll effect",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll Speed",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 75
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Banner"
+    }
+  ]
+}
+{% endschema %}
