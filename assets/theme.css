@@ -675,6 +675,17 @@ textarea {
 .text-center {
   text-align: center !important;
 }
+.small-desktop--show {
+  display:none;
+}
+@media only screen and (max-width: 1400px) {
+  .small-desktop--hide {
+    display:none;
+  }
+  .small-desktop--show {
+    display:block;
+  }
+}
 
 /*================ Build Responsive Grid Classes ================*/
 @media only screen and (max-width: 749px) {

@@ -113,19 +113,12 @@
       </div>
 
       {% if section.settings.align_logo == 'left' %}
-        <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
+        <nav class="grid__item medium-up--one-half small-desktop--hide" id="AccessibleNav" role="navigation">
           {% include 'site-nav', linklist: section.settings.main_linklist %}
         </nav>
       {% endif %}
 
       <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third medium-up--push-one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
-        {% if linklists[section.settings.secondary_linklist] != blank %}
-          <nav class="grid__item medium-up--one-quarter small--hide text-right" 
-               id="AccessibleNavSecondary" 
-               role="navigation">
-            {% include 'site-nav', linklist: section.settings.secondary_linklist %}
-          </nav>
-        {% endif %}
         <div class="site-header__icons-wrapper">
 
           <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
@@ -259,7 +252,7 @@
   </header>
 
   {% if section.settings.align_logo == 'center' %}
-  <nav class="small--hide border-bottom" id="AccessibleNav" role="navigation">
+  <nav class="small-desktop--hide border-bottom" id="AccessibleNav" role="navigation">
     {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
   </nav>
   {% endif %}
@@ -488,7 +481,7 @@
         "cs": "Nabídka",
         "da": "Menu",
         "de": "Menü",
-        "en": "Left Side Menu",
+        "en": "Menu",
         "es": "Menú",
         "fi": "Valikko",
         "fr": "Menu",
@@ -507,12 +500,6 @@
         "zh-CN": "菜单",
         "zh-TW": "選單"
       },
-      "default": "main-menu"
-    },
-    {
-      "type": "link_list",
-      "id": "secondary_linklist",
-      "label": "Right-side menu",
       "default": "main-menu"
     },
     {
