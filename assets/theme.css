@@ -3293,7 +3293,7 @@ hr {
 }
 
 /*================ Index sections ================*/
-.index-section {
+/* .index-section {
   padding-top: 35px;
   padding-bottom: 35px;
 }
@@ -3302,7 +3302,7 @@ hr {
     padding-top: 55px;
     padding-bottom: 55px;
   }
-}
+} */
 .index-section:first-child {
   padding-top: 0;
   border-top: 0;
