@@ -1942,6 +1942,7 @@ a[href^="tel"] {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   white-space: normal;
+  transition: all 150ms ease;
   font-size: calc(
     ((var(--font-size-base) - 2) / (var(--font-size-base))) * 1em
   );
@@ -1957,8 +1958,9 @@ a[href^="tel"] {
   .shopify-payment-button__button--unbranded:not([disabled]):hover,
 .btn:focus,
 .shopify-payment-button .shopify-payment-button__button--unbranded:focus {
-  color: var(--color-btn-primary-text);
-  background-color: var(--color-btn-primary-focus);
+  color: var(--color-text);
+    padding-bottom: 4px;
+    margin-bottom: -4px;
 }
 .btn .icon-arrow-right,
 .shopify-payment-button
