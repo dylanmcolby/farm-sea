@@ -170,12 +170,9 @@
           </div>
 
           <div class="nav_right">
-            <button type="button" style=""
-                    class="nav_icon-link site-header__search-toggle js-drawer-open-top"
-                    data-predictive-search-open-drawer 
-                    aria-label="Search">
+            <a href="{{ routes.search_url }}" class="nav_icon-link" aria-label="Search">
               <div class="nav_icon">{% render 'icon-search' %}</div>
-            </button>
+            </a>
             <a href="{{ routes.account_url }}" class="nav_icon-link" aria-label="Account">
               <div class="nav_icon">{% render 'icon-account' %}</div>
             </a>
@@ -467,7 +464,6 @@
     padding: calc(var(--nav-padding) / 1.5);
     border-radius: 0.5rem;
     position: relative;
-    border:none;outline:none;background:transparent;
   }
 
   .nav_icon-link:hover {
