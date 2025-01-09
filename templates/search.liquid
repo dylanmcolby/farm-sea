@@ -1,4 +1,29 @@
-{% paginate search.results by 10 %}
+{% comment %}
+  1) We create a filtered array: "product_results" with only product items
+  2) We paginate that filtered array instead of "search.results"
+  3) We replace the large <ul>…</ul> with a grid-based markup, including the "grid_item_width" logic
+  4) We display the results count using product_results.size
+{% endcomment %}
+
+{% assign product_results = search.results | where: 'object_type', 'product' %}
+{% paginate product_results by 10 %}
+
+{%- comment -%}
+  Example "grid_item_width" logic from your snippet:
+  Adjust or remove as needed, depending on how you want
+  to configure columns, etc. If "section.settings.grid" doesn't exist
+  in this context, you can manually set a default "grid_item_width".
+{%- endcomment -%}
+{% case section.settings.grid %}
+  {% when 2 %}
+    {%- assign grid_item_width = 'medium-up--one-half' -%}
+  {% when 3 %}
+    {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+  {% when 4 %}
+    {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+  {% when 5 %}
+    {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+{% endcase %}
 
 <div class="page-width">
   {% if search.performed == false %}
@@ -7,13 +32,13 @@
   {% else %}
     <div class="text-center">
       <h1 class="h2">
-        <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
-        {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+        <span class="visually-hidden">{{ 'general.search.heading' | t: count: product_results.size }}:</span>
+        {{ 'general.search.results_with_count' | t: terms: search.terms, count: product_results.size }}
       </h1>
   {% endif %}
       <div class="grid">
         <div class="grid__item medium-up--six-tenths medium-up--push-two-tenths">
-          {% if search.performed and search.results_count == 0 %}
+          {% if search.performed and product_results.size == 0 %}
             <div class="rte search--no-results-found">
               <p>{{ 'general.search.no_results' | t }}</p>
             </div>
@@ -56,45 +81,17 @@
   </div>
 </div>
 
-
 {% if search.performed %}
-  {% if search.results_count > 0 %}
+  {% if product_results.size > 0 %}
     <hr aria-hidden="true" />
   {% endif %}
 
-  <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+  <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: product_results.size }}</h2>
 
-  <ul class="page-width list-view-items">
-    {% for item in search.results %}
-      <li class="list-view-item">
-        {% if item.object_type == 'product' %}
-          {% include 'product-card-list', product: item %}
-        {% comment %} {% else %}
-          <div class="product-card product-card--list">
-            <a href="{{ item.url }}" class="full-width-link">
-              <span class="visually-hidden">{{ item.title }}</span>
-            </a>
-            <div class="list-view-item__link">
-              <div class="list-view-item__image-column">
-                <div class="list-view-item__image-wrapper product-card__image-wrapper">
-                  {% unless item.image == null %}
-                    <img class="list-view-item__image" src="{{ item.image.src | img_url: '600x600' }}" alt="{{ item.image.alt | escape }}">
-                  {% endunless %}
-                </div>
-              </div>
-
-              <div class="list-view-item__title-column">
-                <div class="list-view-item__title" aria-hidden="true">
-                  <span class="product-card__title">{{ item.title }}</span>
-                </div>
-                <div>
-                  {% if item.published_at %}{{ item.published_at | date: format: "date" }} &#8212; {% endif %}
-                  {{ item.content | strip_html | truncate: 200 }}
-                </div>
-              </div>
-            </div>
-          </div> {% endcomment %}
-        {% endif %}
+  <ul class="grid grid--uniform{% if product_results.size > 0 %} grid--view-items{% endif %}">
+    {% for product in product_results %}
+      <li class="grid__item grid__item--{{ section.id }} {{ grid_item_width }}">
+        {% include 'product-card-grid', product: product, show_vendor: section.settings.show_vendor %}
       </li>
     {% endfor %}
   </ul>
@@ -104,7 +101,11 @@
   {%- endif -%}
 {% endif %}
 
-{% if search.results_count < 2  %}
+{%- comment -%}
+  Example logic if you want to display something for fewer than 2 results
+  (just referencing product_results.size):
+{%- endcomment -%}
+{% if product_results.size < 2 %}
   <div class="search--less-than-2-results"></div>
 {% endif %}
 
