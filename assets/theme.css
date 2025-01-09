@@ -4203,7 +4203,8 @@ hr {
   .product-single__thumbnails-item-slide {
     display: block;
     float: left;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 1;
     min-height: 1px;
     padding: 5px 2.5px;
   }
