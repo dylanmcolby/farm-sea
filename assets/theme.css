@@ -5875,6 +5875,7 @@ hr {
   justify-content: center;
   width: 50px;
   background-color: var(--color-btn-primary);
+  color: var(--color-btn-primary-text);
   border-radius: 0 2px 2px 0;
   transition: background-color 100ms ease-in-out;
 }
