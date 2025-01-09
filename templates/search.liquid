@@ -67,7 +67,7 @@
 
   <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: product_results.size }}</h2>
 
-
+  {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
   <ul class="grid grid--uniform{% if product_results.size > 0 %} grid--view-items{% endif %}">
     {% for product in product_results %}
       <li class="grid__item grid__item--{{ section.id }} {{ grid_item_width }}">
