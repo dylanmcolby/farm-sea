@@ -4133,6 +4133,7 @@ hr {
   }
   .product-single__thumbnail * {
     aspect-ratio: 1!important;
+    object-fit:cover;
   }
 }
 
