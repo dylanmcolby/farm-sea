@@ -30,6 +30,8 @@
  
         <img id="{{ img_id }}"
               loading="lazy"
+              width="{{ preview_image.width }}"
+              height="{{ preview_image.height }}"
               class="grid-view-item__image first__image"
               alt="{{ preview_image.alt }}"
               src="{{ preview_image | img_url: '300x' }}"
@@ -41,7 +43,10 @@
                      900px">
          {% if product.images.size > 0 %} 
         <img 
-              loading="lazy"
+              loading="eager"
+              width="{{ product.images[1].width }}"
+              height="{{ product.images[1].height }}"
+              fetchpriority="high"
               class="grid-view-item__image second__image hide"
               alt="{{ preview_image.alt }}"
               src="{{ product.images[1] | img_url: '300x' }}"
@@ -51,8 +56,8 @@
               sizes="(max-width: 600px) 300px,
                      (max-width: 900px) 600px,
                      900px">
-        </a>
         {% endif %}
+      </a>
       </div>
     </div>
   </div>
