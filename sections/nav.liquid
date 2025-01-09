@@ -178,7 +178,7 @@
             </a>
             <a href="{{ routes.cart_url }}" class="nav_icon-link js-open-cart" aria-label="Cart">
               <div class="nav_icon">{% render 'icon-cart' %}</div>
-              <span class="nav_icon-overlay-text js-cart-count critical-hidden" data-cart-count>
+              <span class="nav_icon-overlay-text js-cart-count critical-hidden" data-cart-count-bubble data-cart-count>
                 {%- if cart.item_count > 0 -%}{{ cart.item_count }}{%- endif -%}
               </span>
             </a>
