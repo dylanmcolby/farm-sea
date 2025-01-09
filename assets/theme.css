@@ -1959,8 +1959,8 @@ a[href^="tel"] {
 .btn:focus,
 .shopify-payment-button .shopify-payment-button__button--unbranded:focus {
   color: var(--color-text);
-    padding-bottom: 4px;
-    margin-bottom: -4px;
+    padding-bottom: 2px;
+    margin-bottom: -2px;
 }
 .btn .icon-arrow-right,
 .shopify-payment-button
