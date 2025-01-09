@@ -4736,7 +4736,7 @@ hr {
   font-size: calc(
     ((var(--font-size-base) - 1) / (var(--font-size-base))) * 1em
   );
-  width: 50%;
+  width: 25%;
 }
 .cart__price dl {
   margin: 0;
