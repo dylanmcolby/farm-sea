@@ -43,7 +43,7 @@
                      900px">
          {% if product.images.size > 0 %} 
         <img 
-              loading="eager"
+              loading="lazy"
               width="{{ product.images[1].width }}"
               height="{{ product.images[1].height }}"
               fetchpriority="low"
