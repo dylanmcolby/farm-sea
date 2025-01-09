@@ -5923,8 +5923,7 @@ theme.SearchDrawer = (function() {
     drawer: '[data-predictive-search-drawer]',
     drawerOpenButton: '[data-predictive-search-open-drawer]',
     headerSearchInput: '[data-predictive-search-drawer-input]',
-    predictiveSearchWrapper: '[data-predictive-search-mount="drawer"]',
-    closeButton: '[data-predictive-search-drawer-close]'
+    predictiveSearchWrapper: '[data-predictive-search-mount="drawer"]'
   };
 
   var drawerInstance;
@@ -5937,12 +5936,6 @@ theme.SearchDrawer = (function() {
         setHeight();
         theme.MobileNav.closeMobileNav();
         lockBodyScroll();
-        
-        // Focus the search input when drawer opens
-        var searchInput = document.querySelector(selectors.headerSearchInput);
-        if (searchInput) {
-          searchInput.focus();
-        }
       },
       onDrawerClose: function() {
         theme.SearchHeader.clearAndClose();
@@ -5956,16 +5949,6 @@ theme.SearchDrawer = (function() {
       },
       withPredictiveSearch: true,
       elementToFocusOnOpen: document.querySelector(selectors.headerSearchInput)
-    });
-
-    // Add click event for drawer open buttons
-    var openButtons = document.querySelectorAll(selectors.drawerOpenButton);
-    openButtons.forEach(function(button) {
-      button.addEventListener('click', function(evt) {
-        evt.preventDefault();
-        evt.stopPropagation();
-        drawerInstance.open();
-      });
     });
   }
 
