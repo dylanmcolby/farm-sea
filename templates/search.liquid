@@ -69,7 +69,7 @@
       <li class="list-view-item">
         {% if item.object_type == 'product' %}
           {% include 'product-card-list', product: item %}
-        {% else %}
+        {% comment %} {% else %}
           <div class="product-card product-card--list">
             <a href="{{ item.url }}" class="full-width-link">
               <span class="visually-hidden">{{ item.title }}</span>
@@ -93,7 +93,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
         {% endif %}
       </li>
     {% endfor %}

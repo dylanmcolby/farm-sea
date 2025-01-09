@@ -3948,7 +3948,7 @@ hr {
   max-width: 100%;
   display: block;
   margin: 0 auto;
-  padding: 2px;
+  padding: 0;
 }
 
 .product-single__thumbnail-badge {
