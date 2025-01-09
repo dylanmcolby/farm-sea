@@ -1,28 +1,6 @@
-{% comment %}
-  1) We create a filtered array: "product_results" with only product items
-  2) We paginate that filtered array instead of "search.results"
-  3) We replace the large <ul>…</ul> with a grid-based markup, including the "grid_item_width" logic
-  4) We display the results count using product_results.size
-{% endcomment %}
+{% paginate search.results by 10 %}
 
-{% assign product_results = search.results | where: 'object_type', 'product' %}
-
-{%- comment -%}
-  Example "grid_item_width" logic from your snippet:
-  Adjust or remove as needed, depending on how you want
-  to configure columns, etc. If "section.settings.grid" doesn't exist
-  in this context, you can manually set a default "grid_item_width".
-{%- endcomment -%}
-{% case section.settings.grid %}
-  {% when 2 %}
-    {%- assign grid_item_width = 'medium-up--one-half' -%}
-  {% when 3 %}
-    {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
-  {% when 4 %}
-    {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
-  {% when 5 %}
-    {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
-{% endcase %}
+{% assign product_only_count = search.results | where: 'object_type', 'product' | size %}
 
 <div class="page-width">
   {% if search.performed == false %}
@@ -31,13 +9,13 @@
   {% else %}
     <div class="text-center">
       <h1 class="h2">
-        <span class="visually-hidden">{{ 'general.search.heading' | t: count: product_results.size }}:</span>
-        {{ 'general.search.results_with_count' | t: terms: search.terms, count: product_results.size }}
+        <span class="visually-hidden">{{ 'general.search.heading' | t: count: product_only_count }}:</span>
+        {{ 'general.search.results_with_count' | t: terms: search.terms, count: product_only_count }}
       </h1>
   {% endif %}
       <div class="grid">
         <div class="grid__item medium-up--six-tenths medium-up--push-two-tenths">
-          {% if search.performed and product_results.size == 0 %}
+          {% if search.performed and product_only_count == 0 %}
             <div class="rte search--no-results-found">
               <p>{{ 'general.search.no_results' | t }}</p>
             </div>
@@ -80,6 +58,7 @@
   </div>
 </div>
 
+
 {% if search.performed %}
   {% if product_results.size > 0 %}
     <hr aria-hidden="true" />
@@ -101,10 +80,8 @@
   {%- endif -%}
 {% endif %}
 
-{%- comment -%}
-  Example logic if you want to display something for fewer than 2 results
-  (just referencing product_results.size):
-{%- endcomment -%}
-{% if product_results.size < 2 %}
+{% if search.results_count < 2  %}
   <div class="search--less-than-2-results"></div>
 {% endif %}
+
+{% endpaginate %}
