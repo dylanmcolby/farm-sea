@@ -326,7 +326,7 @@
           "bc774ba8-12f2-4842-9fca-cd5334f28e9e": {
             "type": "html",
             "settings": {
-              "code": "<div id=\"rap__med__instagram\"></div><script async src=\"https://theraptormedia.com/instagram/embed.js\" data-id=\"farm-sea.myshopify.com\" defer></script>",
+              "code": "<style>\n#shopify-section-1629395749ace038c6 .custom__item:first-child {\n  margin-bottom: 0;\n}\n</style>\n<div id=\"rap__med__instagram\"></div><script async=\"\" src=\"https://theraptormedia.com/instagram/embed.js\" data-id=\"farm-sea.myshopify.com\" defer></script>",
               "width": "100%"
             }
           }
@@ -930,5 +930,8 @@
         "1492033809691"
       ]
     }
+  },
+  "platform_customizations": {
+    "custom_css": []
   }
 }
