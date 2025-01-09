@@ -3096,7 +3096,7 @@ hr {
 }
 .grid-view-item__image.hide {
   opacity:0;
-  display:block;
+  display:block!important;
   transition: opacity 200ms ease;
 }
 .grid-view-item__image-wrapper .grid-view-item__image {
