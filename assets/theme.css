@@ -3097,7 +3097,7 @@ hr {
 .grid-view-item__image.hide {
   opacity:0;
   display:block!important;
-  transition: opacity 200ms ease 0.2s;
+  transition: opacity 200ms ease;
 }
 .grid-view-item__image-wrapper .grid-view-item__image {
   max-width: 100% !important;
@@ -8597,7 +8597,7 @@ hr {
   font-family: p22-mackinac-pro, serif;
   font-style: var(--font-style-header);
   font-weight: 100;
-  font-size: 13px;
+  font-size: 1rem;
   text-align: center;
   padding: 10px;
 }
