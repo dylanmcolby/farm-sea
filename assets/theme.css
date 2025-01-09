@@ -1931,7 +1931,7 @@ a[href^="tel"] {
   vertical-align: middle;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 0px;
   padding: 8px 15px;
   background-color: transparent;
   border-bottom: 1px solid currentColor;
@@ -1953,8 +1953,9 @@ a[href^="tel"] {
   .shopify-payment-button__button--unbranded:not([disabled]):hover,
 .btn:focus,
 .shopify-payment-button .shopify-payment-button__button--unbranded:focus {
-  color: var(--color-text);
-  border: 1px solid currentColor;
+  color: var(--color-btn-primary-text);
+  border: 1px solid var(--color-btn-primary);
+  background: 1px solid var(--color-btn-primary);
 }
 .btn .icon-arrow-right,
 .shopify-payment-button
