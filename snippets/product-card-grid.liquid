@@ -29,22 +29,28 @@
          <a class="" href="{{ product.url }}">
  
         <img id="{{ img_id }}"
-              class="grid-view-item__image lazyload first__image"
+              loading="lazy"
+              class="grid-view-item__image first__image"
               alt="{{ preview_image.alt }}"
-              data-src="{{ img_url }}"
-              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-              data-aspectratio="{{ preview_image.aspect_ratio }}"
-              data-sizes="auto"
-              data-image>
+              src="{{ preview_image | img_url: '300x' }}"
+              srcset="{{ preview_image | img_url: '300x' }} 300w,
+                      {{ preview_image | img_url: '600x' }} 600w,
+                      {{ preview_image | img_url: '900x' }} 900w"
+              sizes="(max-width: 600px) 300px,
+                     (max-width: 900px) 600px,
+                     900px">
          {% if product.images.size > 0 %} 
         <img 
-              class="grid-view-item__image lazyload second__image hide"
+              loading="lazy"
+              class="grid-view-item__image second__image hide"
               alt="{{ preview_image.alt }}"
-              data-src="{{  product.images[1] | img_url: 'master' }}"
-              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-              data-aspectratio="{{ preview_image.aspect_ratio }}"
-              data-sizes="auto"
-              data-image>
+              src="{{ product.images[1] | img_url: '300x' }}"
+              srcset="{{ product.images[1] | img_url: '300x' }} 300w,
+                      {{ product.images[1] | img_url: '600x' }} 600w,
+                      {{ product.images[1] | img_url: '900x' }} 900w"
+              sizes="(max-width: 600px) 300px,
+                     (max-width: 900px) 600px,
+                     900px">
         </a>
         {% endif %}
       </div>
