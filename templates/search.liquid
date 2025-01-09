@@ -1,6 +1,7 @@
 {% paginate search.results by 20 %}
 
 {% assign product_only_count = search.results | where: 'object_type', 'product' | size %}
+{% assign product_results = search.results | where: 'object_type', 'product' %}
 
 <div class="page-width">
   {% if search.performed == false %}
