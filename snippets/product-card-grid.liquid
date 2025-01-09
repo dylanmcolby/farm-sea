@@ -46,7 +46,7 @@
               loading="eager"
               width="{{ product.images[1].width }}"
               height="{{ product.images[1].height }}"
-              fetchpriority="high"
+              fetchpriority="low"
               class="grid-view-item__image second__image hide"
               alt="{{ preview_image.alt }}"
               src="{{ product.images[1] | img_url: '300x' }}"
