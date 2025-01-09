@@ -4129,6 +4129,10 @@ hr {
   }
   .product-single__thumbnail {
     margin: 0 auto;
+    aspect-ratio: 1!important;
+  }
+  .product-single__thumbnail * {
+    aspect-ratio: 1!important;
   }
 }
 
