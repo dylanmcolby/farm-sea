@@ -167,16 +167,30 @@
                 <a class="nav_link{% if link.current %} current{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
               {% endif %}
             {% endfor %}
+            <div class="nav_mobile-icons">
+              <a href="{{ routes.search_url }}" class="nav_icon-link is-mobile" aria-label="Search">
+                <div class="nav_icon">{% render 'icon-search' %}</div>
+              </a>
+              <a href="{{ routes.account_url }}" class="nav_icon-link is-mobile" aria-label="Account">
+                <div class="nav_icon">{% render 'icon-account' %}</div>
+              </a>
+              <a href="{{ routes.cart_url }}" class="nav_icon-link is-cart is-mobile js-open-cart" aria-label="Cart">
+                <div class="nav_icon">{% render 'icon-cart' %}</div>
+                <span class="nav_icon-overlay-text js-cart-count critical-hidden" data-cart-count-bubble data-cart-count>
+                  {%- if cart.item_count > 0 -%}{{ cart.item_count }}{%- endif -%}
+                </span>
+              </a>
+            </div>
           </div>
 
           <div class="nav_right">
-            <a href="{{ routes.search_url }}" class="nav_icon-link" aria-label="Search">
+            <a href="{{ routes.search_url }}" class="nav_icon-link is-desktop" aria-label="Search">
               <div class="nav_icon">{% render 'icon-search' %}</div>
             </a>
-            <a href="{{ routes.account_url }}" class="nav_icon-link" aria-label="Account">
+            <a href="{{ routes.account_url }}" class="nav_icon-link is-desktiop" aria-label="Account">
               <div class="nav_icon">{% render 'icon-account' %}</div>
             </a>
-            <a href="{{ routes.cart_url }}" class="nav_icon-link js-open-cart" aria-label="Cart">
+            <a href="{{ routes.cart_url }}" class="nav_icon-link is-cart js-open-cart" aria-label="Cart">
               <div class="nav_icon">{% render 'icon-cart' %}</div>
               <span class="nav_icon-overlay-text js-cart-count critical-hidden" data-cart-count-bubble data-cart-count>
                 {%- if cart.item_count > 0 -%}{{ cart.item_count }}{%- endif -%}
@@ -464,6 +478,23 @@
     padding: calc(var(--nav-padding) / 1.5);
     border-radius: 0.5rem;
     position: relative;
+  }
+  .nav_icon-link.is-mobile {
+    display:none;
+  }
+  .nav_mobile-icons {
+    display:none;
+  }
+  @media screen and (max-width: 1200px) {
+    .nav_icon-link.is-desktop {
+      display:none;
+    }
+    .nav_mobile-icons {
+      display:flex;
+    }
+    .nav_icon-link.is-mobile {
+      display:block;
+    }
   }
 
   .nav_icon-link:hover {
