@@ -6,7 +6,6 @@
 {% endcomment %}
 
 {% assign product_results = search.results | where: 'object_type', 'product' %}
-{% paginate product_results by 10 %}
 
 {%- comment -%}
   Example "grid_item_width" logic from your snippet:
@@ -88,6 +87,7 @@
 
   <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: product_results.size }}</h2>
 
+
   <ul class="grid grid--uniform{% if product_results.size > 0 %} grid--view-items{% endif %}">
     {% for product in product_results %}
       <li class="grid__item grid__item--{{ section.id }} {{ grid_item_width }}">
@@ -108,5 +108,3 @@
 {% if product_results.size < 2 %}
   <div class="search--less-than-2-results"></div>
 {% endif %}
-
-{% endpaginate %}
