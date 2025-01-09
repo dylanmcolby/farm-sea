@@ -7157,7 +7157,7 @@ hr {
 }
 
 .price__badge--sold-out {
-  color: var(--color-body-text);
+  color: var(--color-body-text); 
   border-color: var(--color-border);
 }
 .price--sold-out .price__badge--sold-out {
