@@ -4032,8 +4032,9 @@ hr {
   position: absolute;
   top: 0;
   left: 0;
-  width: auto;
+  width: 100%;
   max-width: 100%;
+  object-fit:contain;
 }
 .product-single__media iframe,
 .product-single__media .media-video,
