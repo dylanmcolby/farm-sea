@@ -3091,7 +3091,7 @@ hr {
   display: block;
   margin: 0 auto;
   width: 100%;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease 0.2s;
   opacity: 1;
 }
 .grid-view-item__image.hide {
