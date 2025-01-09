@@ -15,6 +15,7 @@
     "color_button": "#282828",
     "color_small_button_text_border": "#282828",
     "color_text_field_text": "#282828",
+    "color_text_field_border": "#bababa",
     "color_image_overlay": "#282828",
     "image_overlay_opacity": 26,
     "color_borders": "#fafafa",
