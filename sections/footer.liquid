@@ -452,7 +452,7 @@
       <div class="grid__item {% if show_selectors or show_payment_icons %}one-whole{% endif %} small--one-whole site-footer-item-tall">
      
           <div class="text-center site-footer-item-align-right {% if show_selectors or show_payment_icons %}site-footer-item-center-vertically{% endif %}">
-            <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+            <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: routes.root_url }}</small>
           </div>
        
       </div>
