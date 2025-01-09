@@ -7038,10 +7038,10 @@ hr {
   display: block;
 }
 
-.price__regular,
+/* .price__regular,
 .price__sale {
   margin-right: 0.625rem;
-}
+} */
 
 .price--on-sale .price__regular,
 .price--on-sale .price__availability {
@@ -7158,7 +7158,7 @@ hr {
 
 .price__badge--sold-out {
   color: var(--color-body-text);
-  border-color: var(--color-body-text);
+  border-color: var(--color-border);
 }
 .price--sold-out .price__badge--sold-out {
   display: flex;
