@@ -231,13 +231,17 @@
     <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
   </ul>
   <script>
-  $('.grid-view-item__image-wrapper').mouseover(function(){
-    $(this).find('.first__image').addClass("hide");
-    $(this).find('.second__image').removeClass("hide");
-  });
-  $('.grid-view-item__image-wrapper').mouseout(function(){
-    $(this).find('.first__image').removeClass("hide");
-    $(this).find('.second__image').addClass("hide");
+  $('.grid-view-item__image-wrapper').each(function() {
+    if ($(this).find('.second__image').length) {
+      $(this).mouseover(function(){
+        $(this).find('.first__image').addClass("hide");
+        $(this).find('.second__image').removeClass("hide");
+      });
+      $(this).mouseout(function(){
+        $(this).find('.first__image').removeClass("hide");
+        $(this).find('.second__image').addClass("hide");
+      });
+    }
   });
 
     </script>
