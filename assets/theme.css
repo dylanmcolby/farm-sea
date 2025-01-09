@@ -3091,13 +3091,13 @@ hr {
   display: block;
   margin: 0 auto;
   width: 100%;
-  transition: opacity 200ms ease 0.2s;
+  transition: opacity 200ms ease;
   opacity: 1;
 }
 .grid-view-item__image.hide {
   opacity:0;
   display:block!important;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease 0.2s;
 }
 .grid-view-item__image-wrapper .grid-view-item__image {
   max-width: 100% !important;
