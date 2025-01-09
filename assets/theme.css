@@ -1942,25 +1942,19 @@ a[href^="tel"] {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   white-space: normal;
-  transition: all 150ms ease;
+  transition: all 100ms ease;
   font-size: calc(
     ((var(--font-size-base) - 2) / (var(--font-size-base))) * 1em
   );
 }
-@media only screen and (min-width: 750px) {
-  .btn,
-  .shopify-payment-button .shopify-payment-button__button--unbranded {
-    padding: 0px;
-  }
-}
+
 .btn:not([disabled]):hover,
 .shopify-payment-button
   .shopify-payment-button__button--unbranded:not([disabled]):hover,
 .btn:focus,
 .shopify-payment-button .shopify-payment-button__button--unbranded:focus {
   color: var(--color-text);
-    padding-bottom: 2px;
-    margin-bottom: -2px;
+  border: 1px solid currentColor;
 }
 .btn .icon-arrow-right,
 .shopify-payment-button
