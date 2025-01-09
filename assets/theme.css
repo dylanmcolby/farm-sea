@@ -7016,7 +7016,7 @@ hr {
 .price dl {
   margin-top: 0;
 }
-.price dd {
+.price dd:not(:last-child) {
   margin: 0 0.5em 0 0;
 }
 
