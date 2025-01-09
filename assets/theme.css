@@ -1483,13 +1483,18 @@ textarea {
     padding-top: 40px;
   }
 }
-
+.collection-header {
+  padding-top: 35px;
+}
 .section-header {
-  margin: 35px 0;
+  margin: 0 0 35px 0;
 }
 @media only screen and (min-width: 750px) {
   .section-header {
-    margin: 16px 0 55px 0;
+    margin: 0 0 55px 0;
+  }
+  .collection-header {
+    padding-top: 55px;
   }
 }
 
