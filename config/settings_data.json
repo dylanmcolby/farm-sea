@@ -346,7 +346,7 @@
           "col_bg": "#fafafa",
           "layout": "grid",
           "grid": 4,
-          "rows": 2,
+          "rows": 8,
           "show_collection_image": true,
           "show_vendor": false,
           "sort_enable": true,
