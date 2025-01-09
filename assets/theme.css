@@ -7918,7 +7918,7 @@ hr {
 .quotes-wrapper .slick-dots {
   position: relative;
   bottom: 0;
-  text-align: right;
+  text-align: center;
 }
 .quotes-wrapper .slick-dots li {
   margin: 0;

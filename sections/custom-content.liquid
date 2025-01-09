@@ -69,7 +69,7 @@
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               {% endif %}
             {% when 'text' %}
-              <div class="medium-up--text-{{ block.settings.align_text }}">
+              <div class="text-{{ block.settings.align_text }}">
                 {% if block.settings.title != blank %}
                   <h4 class="h3">{{ block.settings.title | escape }}</h4>
                 {% endif %}
