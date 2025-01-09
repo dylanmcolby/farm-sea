@@ -1930,11 +1930,10 @@ a[href^="tel"] {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid currentColor;
   border-radius: 0px;
   padding: 8px 15px;
   background-color: transparent;
-  border-bottom: 1px solid currentColor;
   color: currentColor;
   font-family: karla;
   font-style: var(--font-style-header);
@@ -1942,7 +1941,7 @@ a[href^="tel"] {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   white-space: normal;
-  transition: all 150ms ease;
+  transition: all 200ms ease;
   font-size: calc(
     ((var(--font-size-base) - 2) / (var(--font-size-base))) * 1em
   );
@@ -1953,9 +1952,7 @@ a[href^="tel"] {
   .shopify-payment-button__button--unbranded:not([disabled]):hover,
 .btn:focus,
 .shopify-payment-button .shopify-payment-button__button--unbranded:focus {
-  color: var(--color-btn-primary-text);
-  border: 1px solid var(--color-btn-primary);
-  background-color: var(--color-btn-primary);
+  transform: scale(1.025);
 }
 .btn .icon-arrow-right,
 .shopify-payment-button
