@@ -326,7 +326,7 @@
           "bc774ba8-12f2-4842-9fca-cd5334f28e9e": {
             "type": "html",
             "settings": {
-              "code": "<div id=\"rap__med__instagram\"></div>\n<script async=\"\" src=\"https://theraptormedia.com/instagram/embed.js\" data-id=\"farm-sea.myshopify.com\" defer></script>",
+              "code": "<div id=\"rap__med__instagram\"></div><script async src=\"https://theraptormedia.com/instagram/embed.js\" data-id=\"farm-sea.myshopify.com\" defer></script>",
               "width": "100%"
             }
           }

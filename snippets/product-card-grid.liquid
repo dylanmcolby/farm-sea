@@ -43,10 +43,10 @@
                      900px">
          {% if product.images.size > 0 %} 
         <img 
-              loading="lazy"
+              loading="eager"
               width="{{ product.images[1].width }}"
               height="{{ product.images[1].height }}"
-              fetchpriority="low"
+              fetchpriority="high"
               class="grid-view-item__image second__image hide"
               alt="{{ preview_image.alt }}"
               src="{{ product.images[1] | img_url: '300x' }}"
