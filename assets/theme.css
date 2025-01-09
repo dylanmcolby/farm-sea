@@ -9287,6 +9287,12 @@ hr {
   display: inline;
   padding: 0 20px;
 }
+@media screen and (max-width: 767px) {
+  .footer__menu li {
+    display:block;
+    padding: 10px 20px;
+  }
+}
 .site-footer__newsletter {
   width: 100%;
 }
