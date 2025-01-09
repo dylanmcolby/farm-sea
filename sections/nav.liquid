@@ -170,7 +170,7 @@
           </div>
 
           <div class="nav_right">
-            <button type="button" 
+            <button type="button" style=""
                     class="nav_icon-link site-header__search-toggle js-drawer-open-top" 
                     data-predictive-search-open-drawer 
                     aria-label="{{ 'general.search.submit' | t }}">
@@ -238,33 +238,17 @@
       this.navLeft = document.querySelector('.nav_center');
       this.navLeftClose = document.querySelector('.nav_center-close');
       this.hamburger = document.querySelector('.nav_hamburger');
-      this.searchToggle = document.querySelector('[data-predictive-search-open-drawer]');
       this.init();
     }
 
     init() {
       this.bindEvents();
-      if (window.theme.SearchDrawer) {
-        window.theme.SearchDrawer.init();
-      }
     }
 
     bindEvents() {
       document.addEventListener('DOMContentLoaded', this.onDOMReady.bind(this));
       this.hamburger.addEventListener('click', this.toggleNav.bind(this));
       this.navLeftClose.addEventListener('click', this.closeNav.bind(this));
-      
-      // Add search toggle event
-      if (this.searchToggle) {
-        this.searchToggle.addEventListener('click', function(evt) {
-          evt.preventDefault();
-          evt.stopPropagation();
-          if (window.theme.SearchDrawer) {
-            document.querySelector('[data-predictive-search-drawer]').classList.add('drawer--is-open');
-            document.querySelector('[data-predictive-search-drawer-input]').focus();
-          }
-        });
-      }
     }
 
     onDOMReady() {
@@ -483,6 +467,7 @@
     padding: calc(var(--nav-padding) / 1.5);
     border-radius: 0.5rem;
     position: relative;
+    border:none;outline:none;background:transparent;
   }
 
   .nav_icon-link:hover {
