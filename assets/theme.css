@@ -7169,7 +7169,7 @@ hr {
 }
 .price__badges--listing .price__badge {
   font-size: 0.6em;
-  padding: 0.25rem 0.55rem;
+  padding: .35rem .55rem .25rem .55rem;
 }
 
 /*================ Module | Filters and Sort toolbar and selection ================*/
