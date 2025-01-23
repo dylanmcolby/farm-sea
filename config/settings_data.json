@@ -939,7 +939,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ":-webkit-scrollbar {-webkit-appearance: none; width:0!important;}"
+      "::-webkit-scrollbar {-webkit-appearance: none; width: 0;}"
     ]
   }
 }
