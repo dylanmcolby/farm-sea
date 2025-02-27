@@ -384,10 +384,10 @@
             "settings": {
               "image": "shopify://shop_images/2025Farm_SeaSpringKB-9786.jpg",
               "alignment": "center center",
-              "slide_title": "It's time to get cozy.",
+              "slide_title": "A breath of fresh air.",
               "subheading": "",
-              "button_label": "Shop Best-Selling Scents",
-              "button_link": "shopify://collections/all-farm-sea-candles"
+              "button_label": "Shop Spring + Summer Collection",
+              "button_link": "shopify://collections/spring-summer-collection"
             }
           }
         },
