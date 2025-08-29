@@ -382,11 +382,11 @@
           "16298551902560c450-0": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/2025Farm_SeaSpringKB-9737.jpg",
+              "image": "shopify://shop_images/2025Farm_SeaAutumn-1201.jpg",
               "alignment": "center center",
-              "slide_title": "A breath of fresh air.",
+              "slide_title": "It's time to get cozy.",
               "subheading": "",
-              "button_label": "Shop the Spring + Summer Collection",
+              "button_label": "Shop the Fall + Holiday Collection",
               "button_link": "shopify://collections/spring-summer-collection"
             }
           }
@@ -412,7 +412,7 @@
           "16298552193be549a6-0": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/2025Farm_SeaSpring_Home_Classic_Candle.jpg",
+              "image": "shopify://shop_images/2025Farm_SeaAutumn-0338.jpg",
               "alignment": "center center",
               "slide_title": "The Classic Candle",
               "subheading": "",
@@ -485,7 +485,7 @@
       "feature_row_4V64et": {
         "type": "feature-row",
         "settings": {
-          "image": "shopify://shop_images/2025Farm_SeaSpringKB-9982_29748e69-8514-44f8-9682-9b3f2149c25e.jpg",
+          "image": "shopify://shop_images/2025Farm_SeaAutumn-1092_63bb081c-b012-461a-95a2-72cb81cf82d1.jpg",
           "layout": "left",
           "title": "Elevating your every day",
           "text": "<p>At Farm + Sea, our mission is to elevate your every day with uncomplicated, beautifully fragranced goods. We make them in small batches using quality ingredients, in simple vessels that accent your home in a fresh, modern way.</p>",
