@@ -528,6 +528,47 @@
           "bg_color": "#282828",
           "text_color": "#ffffff"
         }
+      },
+      "image_bar_WcPzHG": {
+        "type": "image-bar",
+        "blocks": {
+          "image_GDyFaw": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/2025Farm_SeaAutumn-1185.jpg",
+              "alignment": "center",
+              "link": "shopify://collections/bath-and-body-from-farm-sea",
+              "cta_label": "Bath + Body"
+            }
+          },
+          "image_DBmwdF": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/2025Farm_SeaAutumn-0972_ae7da422-78c4-48cf-bb12-26ffbebf54ca.jpg",
+              "alignment": "bottom",
+              "link": "shopify://collections/all-farm-sea-candles",
+              "cta_label": "Candles"
+            }
+          },
+          "image_W9tTTM": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/2025Farm_SeaAutumn-1148.jpg",
+              "alignment": "center",
+              "link": "shopify://collections/all-home-fragrance",
+              "cta_label": "Home Fragrance"
+            }
+          }
+        },
+        "block_order": [
+          "image_GDyFaw",
+          "image_DBmwdF",
+          "image_W9tTTM"
+        ],
+        "name": "Gallery",
+        "settings": {
+          "section_height": "large"
+        }
       }
     },
     "content_for_index": [
@@ -540,6 +581,7 @@
       "16293049917132f0e4",
       "16298552193be549a6",
       "162930504726d8965d",
+      "image_bar_WcPzHG",
       "1629395749ace038c6"
     ],
     "blocks": {
