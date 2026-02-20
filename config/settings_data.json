@@ -413,7 +413,7 @@
             "type": "image",
             "settings": {
               "image": "shopify://shop_images/Farm_SeaSpring_2026_ClassicCandle.jpg",
-              "alignment": "center bottom",
+              "alignment": "center center",
               "slide_title": "The Classic Candle",
               "subheading": "",
               "button_label": "Shop Our Year-Round Favorites",
