@@ -412,8 +412,8 @@
           "16298552193be549a6-0": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/2025Farm_SeaAutumn-0338.jpg",
-              "alignment": "center center",
+              "image": "shopify://shop_images/Farm_SeaSpring_2026_ClassicCandle.jpg",
+              "alignment": "center bottom",
               "slide_title": "The Classic Candle",
               "subheading": "",
               "button_label": "Shop Our Year-Round Favorites",
@@ -485,7 +485,7 @@
       "feature_row_4V64et": {
         "type": "feature-row",
         "settings": {
-          "image": "shopify://shop_images/2025Farm_SeaAutumn-1092_63bb081c-b012-461a-95a2-72cb81cf82d1.jpg",
+          "image": "shopify://shop_images/2025Farm_SeaSpringKB-9982_b00f968f-2c7d-44d2-9c43-739f80b0dc20.jpg",
           "layout": "left",
           "title": "Elevating your every day",
           "text": "<p>At Farm + Sea, our mission is to elevate your every day with uncomplicated, beautifully fragranced goods. We make them in small batches using quality ingredients, in simple vessels that accent your home in a fresh, modern way.</p>",
@@ -535,7 +535,7 @@
           "image_GDyFaw": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/2025Farm_SeaAutumn-1185.jpg",
+              "image": "shopify://shop_images/2025Farm_SeaSpring_Hand_Soap_37d4e5ee-2bbc-4eb7-bd95-444f7a048871.jpg",
               "alignment": "center",
               "link": "shopify://collections/bath-and-body-from-farm-sea",
               "cta_label": "Bath + Body"
@@ -544,7 +544,7 @@
           "image_DBmwdF": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/2025Farm_SeaAutumn-0972_ae7da422-78c4-48cf-bb12-26ffbebf54ca.jpg",
+              "image": "shopify://shop_images/2025Farm_SeaSpringKB-9760.jpg",
               "alignment": "bottom",
               "link": "shopify://collections/all-farm-sea-candles",
               "cta_label": "Candles"
@@ -553,7 +553,7 @@
           "image_W9tTTM": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/2025Farm_SeaAutumn-1148.jpg",
+              "image": "shopify://shop_images/2025Farm_SeaSpring_Reed_Diffuser_No_Kraft_Tube_423fb9e7-ff49-44c2-adb0-cf8cdf277cd8.jpg",
               "alignment": "center",
               "link": "shopify://collections/all-home-fragrance",
               "cta_label": "Home Fragrance"
